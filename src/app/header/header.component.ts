@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   Startseite(){
-    window.location.replace("./Home");
+    window.location.replace("./");
   }
 
 }
