@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./start.component.scss']
 })
 export class StartComponent {
+
   OpenLandeshauptstadtQuiz(){
 
     window.location.replace("./LandeshauptstadtQuiz")
 
+  }
+
+  OpenWappenQuiz(){
+    window.location.replace("./WappenQuiz")
   }
 }

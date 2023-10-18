@@ -1,0 +1,17 @@
+<body>
+    <img [src]="Wappen[randomNumber]" alt="">
+    <br>
+    <div>
+        <h2>Zum welchem Bundesland gehört dieses Wappen?</h2>
+        <br>
+    </div>
+    <div class="bt">
+    <input type="text" name="" id="enterBundesland">
+
+    
+    <button class="l-a" (click)="CheckAnswer();">Lösung absenden</button>
+    <button class="weiter" (click)="weiterButton();">Nächste Frage</button>
+
+</div>
+    <p class="output" id="output"></p>
+</body>
