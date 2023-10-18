@@ -6,7 +6,7 @@ import { WappenComponent } from './wappen/wappen.component';
 
 const routes: Routes = [
   {
-    path: 'Home',
+    path: '',
     component: StartComponent
   },
   {
