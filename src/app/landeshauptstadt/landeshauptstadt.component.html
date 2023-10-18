@@ -1,0 +1,19 @@
+<body>
+    <img [src]="WappenohneStadtstaaten[randomNumber]" alt="">
+    <br>
+    <div>
+        <h2>Was ist die Landeshauptstadt von&nbsp;</h2>
+        <h2 class="h21" [innerText]=" ohneStadtstaaten[randomNumber]"></h2>
+        <h2>?</h2>
+        <br>
+    </div>
+    <div class="bt">
+    <input type="text" name="" id="enterLandeshauptstadt">
+
+    
+    <button class="l-a" (click)="CheckAnswer();">Lösung absenden</button>
+    <button class="weiter" (click)="weiterButton();">Nächste Frage</button>
+
+</div>
+    <p class="output" id="output"></p>
+</body>
