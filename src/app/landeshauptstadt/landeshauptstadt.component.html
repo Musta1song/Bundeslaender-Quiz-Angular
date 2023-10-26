@@ -1,19 +1,33 @@
 <body>
-    <img [src]="WappenohneStadtstaaten[randomNumber]" alt="">
+    <img [src]="av.WappenohneStadtstaaten[av.randomNumberCapital]" alt=""> <!--Erzeugt ein zufäliges Wappen.-->
     <br>
     <div class="bt2">
         <h2>Was ist die Landeshauptstadt von&nbsp;</h2>
-        <h2 class="h21" [innerText]=" ohneStadtstaaten[randomNumber]"></h2>
+        <h2 class="h21" [innerText]=" av.ohneStadtstaaten[av.randomNumberCapital]"></h2> <!--Gibt die dazugehörige Frage aus-->
         <h2>?</h2>
         <br>
     </div>
     <div class="bt">
-    <input type="text" name="" id="enterLandeshauptstadt">
+        <select id="enterLandeshauptstadt">
+            <option> Stuttgart </option>
+            <option> München </option>
+            <option> Potsdam </option>
+            <option> Wiesbaden </option>
+            <option> Rostock </option>
+            <option> Hannover </option>
+            <option> Düsseldorf </option>
+            <option> Mainz </option>
+            <option> Saarbrücken </option>
+            <option> Magdeburg </option>
+            <option> Dresden </option>
+            <option> Kiel </option>
+            <option> Erfurt </option>
+        </select> <!--Eingabefeld für die Atnwort-->
 
-    
-    <button class="l-a" (click)="CheckAnswer();">Lösung absenden</button>
-    <button class="weiter" (click)="weiterButton();">Nächste Frage</button>
 
-</div>
+        <button class="l-a" (click)="av.CheckAnswerCapital();">Lösung absenden</button>
+        <button class="weiter" (click)="av.weiterButtonCapital();">Nächste Frage</button>
+
+    </div>
     <p class="output" id="output"></p>
 </body>

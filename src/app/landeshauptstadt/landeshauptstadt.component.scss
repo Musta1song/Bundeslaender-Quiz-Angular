@@ -1,34 +1,42 @@
-img{
+img {
     margin-top: 170px;
     margin-left: 40%;
     width: auto;
     height: 300px;
     align-self: center;
-    
+
 }
-div{
+
+div {
     display: flex;
     margin-left: 33.0%;
     text-align: center;
 
 }
 
+select {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 
 
-.output{
+.output {
     font-style: italic;
     margin-left: 33.0%;
     font-size: 22px;
 }
-.bt{
+
+.bt {
     display: flex;
 }
-button{
+
+button {
     height: 50px;
 
 }
-.l-a{
+
+.l-a {
     margin-left: 15px;
     background: #c7c3ff;
     font-family: 'Times New Roman';
@@ -37,8 +45,9 @@ button{
 
 
 }
-.weiter{
-    margin-left: 15.0px;
+
+.weiter {
+    margin-left: 8.9%;
     background: #6d65dd;
     color: rgb(56, 48, 48);
     text-align: center;
@@ -46,10 +55,16 @@ button{
     font-size: 16px;
     font-weight: bold;
 }
-body{
+
+body {
     font-size: large;
+    min-height: 91.5vh;
+    background-color: rgb(134, 121, 121);
+
+
 }
-input{
+
+input {
     height: 30px;
     font-size: 20px;
     margin-top: 5px;
@@ -58,10 +73,11 @@ input{
     font-weight: 200;
     font-stretch: semi-condensed;
     margin-left: 5px;
-width: 270px;
+    width: 270px;
 
 }
-.h21{
+
+.h21 {
     font-size: 26px;
 
 }

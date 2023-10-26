@@ -1,10 +1,15 @@
-button{
-    background-color: rgb(230, 211, 211);
-    font-size: 15px;
-    color: black;
-    margin-top: 50px;
-    margin-left: 2%;
+button {
+  background-color: rgb(230, 211, 211);
+  font-size: 15px;
+  color: black;
+  margin-top: 50px;
+  margin-left: 2%;
 }
-div{
-    display: block;
+div {
+  display: flex;
+}
+body {
+  min-height: 91.5vh;
+  min-width: 99.5%;
+  background-color: rgb(223, 217, 217);
 }

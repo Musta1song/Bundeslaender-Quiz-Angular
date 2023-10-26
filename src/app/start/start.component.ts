@@ -5,15 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.scss']
 })
+
 export class StartComponent {
 
-  OpenLandeshauptstadtQuiz(){
-
+  OpenLandeshauptstadtQuiz() {
     window.location.replace("./LandeshauptstadtQuiz")
-
   }
 
-  OpenWappenQuiz(){
+  OpenWappenQuiz() {
     window.location.replace("./WappenQuiz")
   }
 }

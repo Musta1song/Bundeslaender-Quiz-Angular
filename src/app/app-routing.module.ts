@@ -10,8 +10,8 @@ const routes: Routes = [
     component: StartComponent
   },
   {
-  path: 'LandeshauptstadtQuiz',
-  component: LandeshauptstadtComponent
+    path: 'LandeshauptstadtQuiz',
+    component: LandeshauptstadtComponent
   },
   {
     path: 'WappenQuiz',
