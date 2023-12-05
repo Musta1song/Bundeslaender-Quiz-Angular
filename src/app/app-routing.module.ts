@@ -1,22 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandeshauptstadtComponent } from './landeshauptstadt/landeshauptstadt.component';
-import { StartComponent } from './start/start.component';
-import { WappenComponent } from './wappen/wappen.component';
+import { LandeshauptstadtComponent } from './Components/landeshauptstadt/landeshauptstadt.component';
 
 const routes: Routes = [
+  
   {
     path: '',
-    component: StartComponent
-  },
-  {
-    path: 'LandeshauptstadtQuiz',
     component: LandeshauptstadtComponent
   },
-  {
-    path: 'WappenQuiz',
-    component: WappenComponent
-  }
+ 
 
 ];
 
