@@ -14,6 +14,11 @@ export class LandeshauptstadtComponent {
   MaxScore: number = 13;
 
   resultBt() {
+    this.ChangeVisibilitiesOnResultpage()
+    this.ShowScore()
+
+  }
+  ChangeVisibilitiesOnResultpage(){
     document.getElementById('question1')!.innerHTML = "";
     document.getElementById('question3')!.innerHTML = "";
     const select = document.getElementById("enterLandeshauptstadt");
@@ -24,51 +29,45 @@ export class LandeshauptstadtComponent {
     weiterBt!.style.visibility = 'hidden';
     select!.style.visibility = 'hidden';
     reloadBt!.style.visibility = 'visible';
-
-
+  }
+  ShowScore(){
     if(7<=this.points){
       this.number=13
-      document.getElementById('output')!.innerHTML = "Glückwunsch! Sie haben das Quiz bestanden! <br>  Sie haben " + this.points + " von 13 Punkten erreicht!" ;
+      document.getElementById('output')!.innerHTML = "Glückwunsch! Du hast das Quiz bestanden! <br>  Du hast " + this.points + " von 13 Punkten erreicht!" ;
     }
     else if(6>=this.points){
       this.number=14
-      document.getElementById('output')!.innerHTML = "Schade! Sie haben das Quiz leider nicht bestanden! <br>  Sie haben " + this.points + " von 13 Punkten erreicht!" ;
+      document.getElementById('output')!.innerHTML = "Schade! Du hast das Quiz leider nicht bestanden! <br>  Du hast " + this.points + " von 13 Punkten erreicht!" ;
     }
-
-
-
   }
 
   CheckAnswerCapital() {
-    let correctanswer: string = this.av.Landeshauptstädte[this.number];
-    let answer: string = ((<HTMLInputElement>document.getElementById("enterLandeshauptstadt")).value);
-    let a = this.av.ohneStadtstaaten[this.number];
-    let b = this.av.Landeshauptstädte[this.number];
+    let CorrectAnswer: string = this.av.Landeshauptstaedte[this.number];
+    let SeletedAnswer: string = ((<HTMLInputElement>document.getElementById("enterLandeshauptstadt")).value);
+    let OutputQuestionState = this.av.LaenderOhneStadtstaaten[this.number];
+    let OutputCorrectState = this.av.Landeshauptstaedte[this.number];
 
-    if (answer === correctanswer && answer != null && this.number < 12) {
-      let output: string = "Korrekt!, die Landeshauptstadt von " + a + " ist " + b + ".";
-      document.getElementById('output')!.innerHTML = output;
-      this.points = this.points + 1;
-      this.number = this.number + 1;
+    if (SeletedAnswer === CorrectAnswer && SeletedAnswer != null && this.number < 12) {
+      this.IfAnswerIsTrue(OutputQuestionState, OutputCorrectState)
     }
-    else if (answer == null) {
+    else if (SeletedAnswer == null) {
       alert("Du musst erst die Lösung absenden!");
     }
-    else if (answer === correctanswer && answer != null && this.number === 12) {
-      let output: string = "Korrekt!, die Landeshauptstadt von " + a + " ist " + b + ".";
-      document.getElementById('output')!.innerHTML = output;
-      this.points = this.points + 1;
-      const resultBt = document.getElementById("result");
-      resultBt!.style.visibility = 'visible';
+    else if (SeletedAnswer === CorrectAnswer && SeletedAnswer != null && this.number === 12) {
+      this.LastQuestionIfAnswerIsTrue(OutputQuestionState, OutputCorrectState)
     }
-    else if (answer !== correctanswer && answer != null && this.number < 12) {
-      let output: string = "Falsch, die richtige Antwort wäre " + b + "!";
-      document.getElementById('output')!.innerHTML = output;
-      this.number = this.number + 1;
-
+    else if (SeletedAnswer !== CorrectAnswer && SeletedAnswer != null && this.number < 12) {
+      this.IfAnswerIsFalse (OutputCorrectState )
     }
-    else if (answer !== correctanswer && answer != null && this.number === 12) {
-      let output: string = "Falsch, die richtige Antwort wäre " + b + "!";
+    else if (SeletedAnswer !== CorrectAnswer && SeletedAnswer != null && this.number === 12) {
+      this.LastQuestionIfAnswerIsFalse(OutputCorrectState)
+    }
+  }
+    reload(){
+      window.location.reload();
+    }
+    LastQuestionIfAnswerIsFalse(OutputCorrectState: string){
+      let output: string = "Falsch, die richtige Antwort wäre " + OutputCorrectState + "!";
       document.getElementById('output')!.innerHTML = output;
       const resultBt = document.getElementById("result");
       const answerBt = document.getElementById("answer");
@@ -77,9 +76,26 @@ export class LandeshauptstadtComponent {
 
 
     }
-  }
-    reload(){
-      window.location.reload();
+    IfAnswerIsFalse (OutputCorrectState: string ){
+      let output: string = "Falsch, die richtige Antwort wäre " + OutputCorrectState + "!";
+      document.getElementById('output')!.innerHTML = output;
+      this.number = this.number + 1;
+
+    }
+
+    LastQuestionIfAnswerIsTrue(OutputState: string, OutputCorrectState: string ){
+      let output: string = "Korrekt!, die Landeshauptstadt von " + OutputState + " ist " + OutputCorrectState + ".";
+      document.getElementById('output')!.innerHTML = output;
+      this.points = this.points + 1;
+      const resultBt = document.getElementById("result");
+      resultBt!.style.visibility = 'visible';
+
+    }
+    IfAnswerIsTrue(OutputState: string, OutputCorrectState: string ){
+      let output: string = "Korrekt!, die Landeshauptstadt von " + OutputState + " ist " + OutputCorrectState + ".";
+      document.getElementById('output')!.innerHTML = output;
+      this.points = this.points + 1;
+      this.number = this.number + 1;
     }
   }
 

@@ -4,7 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ArraysService {
-  WappenohneStadtstaaten = [
+  thumbs = [
+    "assets/GreenUp.png",
+    "assets/redDown.png"
+  ]
+  WappenOhneStadtstaaten = [
     "assets/Baden-Württemberg.png",
     "assets/Bayern.png",
     "assets/Brandenburg.png",
@@ -18,11 +22,13 @@ export class ArraysService {
     "assets/Sachsen.png",
     "assets/Schleswig.png",
     "assets/Thueringen.png",
-    "assets/gUp.png",
-    "assets/redDown.png"
+    this.thumbs[0],
+    this.thumbs[1]
+
   ]
 
-  ohneStadtstaaten = [
+
+  LaenderOhneStadtstaaten = [
     "Baden-Würrtemberg",
     "Bayern",
     "Brandenburg",
@@ -40,7 +46,7 @@ export class ArraysService {
     ""
   ]
 
-  Landeshauptstädte = [
+  Landeshauptstaedte = [
     "Stuttgart",
     "München",
     "Potsdam",
@@ -55,9 +61,6 @@ export class ArraysService {
     "Kiel",
     "Erfurt"
   ]
-
-
-
 
   Bundeslaender = [
     "Baden-Württemberg",
