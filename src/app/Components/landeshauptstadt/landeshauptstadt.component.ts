@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArraysService } from 'src/app/Services/arrays/arrays.service';
 
 @Component({
