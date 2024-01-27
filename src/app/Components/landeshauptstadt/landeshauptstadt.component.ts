@@ -19,7 +19,9 @@ export class LandeshauptstadtComponent {
     const select = document.getElementById("enterLandeshauptstadt");
     const reloadBt = document.getElementById("reloadbutton");
     const resultBt = document.getElementById("result");
+    const weiterBt = document.getElementById("answer");
     resultBt!.style.visibility = 'hidden';
+    weiterBt!.style.visibility = 'hidden';
     select!.style.visibility = 'hidden';
     reloadBt!.style.visibility = 'visible';
 
