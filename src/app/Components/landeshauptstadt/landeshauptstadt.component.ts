@@ -51,6 +51,9 @@ export class LandeshauptstadtComponent {
     if (SeletedAnswer === CorrectAnswer && SeletedAnswer != null && this.number < 12) { // Bei richtiger Antwort.
       this.IfAnswerIsTrue(OutputQuestionState, CorrectAnswer)
     }
+    else if (SeletedAnswer === "") {
+      alert("Du musst erst eine Antwort auswählen!");
+    }
     else if (SeletedAnswer === CorrectAnswer && SeletedAnswer != null && this.number === 12) { // Bei richtiger Antwort und letzter Frage.
       this.LastQuestionIfAnswerIsTrue(OutputQuestionState, CorrectAnswer)
     }
