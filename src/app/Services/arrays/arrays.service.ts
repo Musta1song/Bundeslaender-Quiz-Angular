@@ -42,7 +42,7 @@ export class ArraysService {
     "Sachsen",
     "Schleswig-Holstein",
     "Thüringen",
-    "",
+    "", 
     ""
   ]
 
