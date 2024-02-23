@@ -6,6 +6,14 @@ import { AppComponent } from './app.component';
 import { LandeshauptstadtComponent } from './Components/landeshauptstadt/landeshauptstadt.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon'
+import { MatSelectModule } from '@angular/material/select'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { FormsModule } from '@angular/forms';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -13,10 +21,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LandeshauptstadtComponent,
     HeaderComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
