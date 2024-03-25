@@ -8,53 +8,53 @@ export class ArraysService {
     "assets/GreenUp.png",
     "assets/redDown.png"
   ]
-  WappenAndState = [
+  FlagAndState = [
     {
-      Wappen: "assets/Baden-Württemberg.png", State: "Baden-Würrtemberg", Capital: "Stuttgart"
+      Flag: "assets/Baden-Württemberg.png", State: "Baden-Würrtemberg", Capital: "Stuttgart"
     },
     {
-      Wappen: "assets/Bayern.png", State: "Bayern", Capital: "München"
+      Flag: "assets/Bayern.png", State: "Bayern", Capital: "München"
     },
     {
-      Wappen: "assets/Brandenburg.png", State: "Brandenburg", Capital: "Potsdam"
+      Flag: "assets/Brandenburg.png", State: "Brandenburg", Capital: "Potsdam"
     },
     {
-      Wappen: "assets/Hessen.png", State: "Hessen", Capital: "Wiesbaden"
+      Flag: "assets/Hessen.png", State: "Hessen", Capital: "Wiesbaden"
     },
     {
-      Wappen: "assets/Mecklenburg.png", State: "Mecklenburg-Vorpommern", Capital: "Rostock"
+      Flag: "assets/Mecklenburg.png", State: "Mecklenburg-Vorpommern", Capital: "Rostock"
     },
     {
-      Wappen: "assets/Niedersachsen.png", State: "Niedersachsen", Capital: "Hannover"
+      Flag: "assets/Niedersachsen.png", State: "Niedersachsen", Capital: "Hannover"
     },
     {
-      Wappen: "assets/Nrw.png", State: "Nordrhein-Westfalen", Capital: "Düsseldorf"
+      Flag: "assets/Nrw.png", State: "Nordrhein-Westfalen", Capital: "Düsseldorf"
     },
     {
-      Wappen: "assets/Rheinland.png", State: "Rheinland-Pfalz", Capital: "Mainz"
+      Flag: "assets/Rheinland.png", State: "Rheinland-Pfalz", Capital: "Mainz"
     },
     {
-      Wappen: "assets/Saarland.png", State: "Saarland", Capital: "Saarbrücken"
+      Flag: "assets/Saarland.png", State: "Saarland", Capital: "Saarbrücken"
     },
     {
-      Wappen: "assets/Sachsen-anhalt.png", State: "Sachsen-Anhalt", Capital: "Magdeburg"
+      Flag: "assets/Sachsen-anhalt.png", State: "Sachsen-Anhalt", Capital: "Magdeburg"
     },
     {
-      Wappen: "assets/Sachsen.png", State: "Sachsen", Capital: "Dresden"
+      Flag: "assets/Sachsen.png", State: "Sachsen", Capital: "Dresden"
     },
     {
-      Wappen: "assets/Schleswig.png", State: "Schleswig-Holstein", Capital: "Kiel"
+      Flag: "assets/Schleswig.png", State: "Schleswig-Holstein", Capital: "Kiel"
     },
     {
-      Wappen: "assets/Thueringen.png", State: "Thueringen", Capital: "Erfurt"
+      Flag: "assets/Thueringen.png", State: "Thueringen", Capital: "Erfurt"
     },
-   
+
 
   ]
 
 
 
-  Landeshauptstaedte = [
+  Capitals = [
     "Stuttgart",
     "München",
     "Potsdam",
@@ -70,7 +70,7 @@ export class ArraysService {
     "Erfurt"
   ]
 
-  Bundeslaender = [
+  States = [
     "Baden-Württemberg",
     "Bayern",
     "Berlin",
@@ -88,7 +88,7 @@ export class ArraysService {
     "Schleswig-Holstein",
     "Thüringen"]
 
-  Wappen = [
+  Flag = [
     "assets/Baden-Württemberg.png",
     "assets/Bayern.png",
     "assets/Berlin.png",

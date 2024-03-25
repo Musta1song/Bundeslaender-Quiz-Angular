@@ -1,25 +1,27 @@
-<div class="body"> <img src={{av.WappenAndState[number].Wappen}} id="img" alt=""> <!--Erzeugt ein zufäliges Wappen.-->
+<div class="body"> <img src={{av.FlagAndState[number].Flag}} id="img" alt="">
     <br>
     <div class="bt">
-        <h2 id="question">Was ist die Landeshauptstadt von&nbsp;</h2>
-        <h2 id="question1" class="h21" [innerText]="av.WappenAndState[number].State"></h2>         <!--Gibt die dazugehörige Frage aus-->
-        <h2 id="question2">?</h2>
+        <h3 id="question">Was ist die Landeshauptstadt von&nbsp;</h3>
+        <h3 id="question1" class="h31" [innerText]="av.FlagAndState[number].State"></h3>
+        <!--Gibt die dazugehörige Frage aus-->
+        <h3 id="question2">?</h3>
         <br>
     </div>
     <div class="bt">
         <mat-form-field id="enterLandeshauptstadt">
-            <mat-select [(ngModel)]="SelectedCapital"  placeholder="-" disableRipple>
-                <mat-option selected></mat-option>
+            <mat-select [(ngModel)]="SelectedCapital" placeholder="-" disableRipple>
+                <mat-option selected disabled="true"></mat-option>
                 <div *ngFor="let cp of this.CapitalStates">
                     <mat-option value="{{cp}}"> {{cp}} </mat-option>
                 </div>
             </mat-select>
         </mat-form-field>
 
+        <button mat-raised-button color="primary" class="answerBt" id="answer" (click)="CheckAnswerCapital();">Lösung
+            <mat-icon>arrow_forward</mat-icon></button>
+        <button mat-raised-button class="continueBt" id="result" color="warn" (click)="resultBt();">
+            Ergebnis <mat-icon>arrow_forward</mat-icon></button>
 
-        <button class="answerBt" id="answer" (click)="CheckAnswerCapital();">Lösung absenden</button>
-        <button class="weiter" id="result" (click)="resultBt();">Zum Ergebnis</button>
-        <button class="reloadbutton" id="reloadbutton" (click)="reload();"> Quiz erneut <br> spielen</button>
     </div><br>
-    <p class="output" id="output"></p>
+    <h4 class="output" id="output"></h4>
 </div>

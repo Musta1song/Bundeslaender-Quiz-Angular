@@ -13,7 +13,7 @@ export class LandeshauptstadtComponent implements OnInit {
   points: number = 0;
   MaxScore: number = 13;
   CapitalStates: any = []
-  Wappen: any = []
+  Flag: any = []
   SelectedCapital: any
 
   ngOnInit(): void {
@@ -25,30 +25,21 @@ export class LandeshauptstadtComponent implements OnInit {
   }
 
   ChangeVisibilitiesOnResultpage() {
+    document.getElementById('question')!.style.visibility = "hidden";
+    document.getElementById('question1')!.style.visibility = "hidden";
+    document.getElementById('question2')!.style.visibility = "hidden";
+    document.getElementById("enterLandeshauptstadt")!.style.visibility = 'hidden';
+    document.getElementById("result")!.style.visibility = 'hidden';
+    document.getElementById("answer")!.style.visibility = 'hidden';
 
-    const question = document.getElementById('question'); question!.style.visibility = "hidden";
-    const question1 = document.getElementById('question1'); question1!.style.visibility = "hidden";
-    const question2 = document.getElementById('question2'); question2!.style.visibility = "hidden";
-
-
-    const select = document.getElementById("enterLandeshauptstadt");
-    select!.style.visibility = 'hidden';
-
-    const reloadBt = document.getElementById("reloadbutton");
-    reloadBt!.style.visibility = 'visible';
-
-    const resultBt = document.getElementById("result");
-    resultBt!.style.visibility = 'hidden';
-
-    const weiterBt = document.getElementById("answer");
-    weiterBt!.style.visibility = 'hidden';
 
   }
   ShowScore() {
-    if (7 <= this.points) // Falls der Nutzer mehr als die Hälfte der Fragen richtig beantwortet hat.
-    {
+    if (7 <= this.points) {
       this.number = 13
-      document.getElementById('output')!.innerHTML = "Glückwunsch! Du hast das Quiz bestanden! <br>  Du hast " + this.points + " von 13 Punkten erreicht!";
+      const output = document.getElementById('output')
+      output!.innerHTML = `Glückwunsch! Du hast das Quiz bestanden! <br>  Du hast ${this.points} von 13 Punkten erreicht!`;
+      output!.style.color = "green"
 
       const src = document.getElementById("img") as HTMLImageElement;
       src!.src = this.av.thumbs[0]
@@ -56,31 +47,35 @@ export class LandeshauptstadtComponent implements OnInit {
     }
 
     this.number = 14
-    document.getElementById('output')!.innerHTML = "Schade! Du hast das Quiz leider nicht bestanden! <br>  Du hast " + this.points + " von 13 Punkten erreicht!";
+    const output = document.getElementById('output')
+
+    output!.innerHTML = `Schade! Du hast das Quiz leider nicht bestanden. <br>  Du hast ${this.points} von 13 Punkten erreicht!`;
+    output!.style.color = "red"
+
     const src = document.getElementById("img") as HTMLImageElement;
     src!.src = this.av.thumbs[1]
   }
 
   CheckAnswerCapital() {
-    let CorrectAnswer: string = this.av.WappenAndState[this.number].Capital; // Die richtige Anwort.
-    let SeletedAnswer: string = this.SelectedCapital // Vom Nutzer eingegebene Anwort.
-    let OutputQuestionState = this.av.WappenAndState[this.number].State; // Das in der Frage angegebene Bundesland.
+    let CorrectAnswer: string = this.av.FlagAndState[this.number].Capital;
+    let SeletedAnswer: string = this.SelectedCapital
+    let OutputQuestionState = this.av.FlagAndState[this.number].State;
     if (SeletedAnswer === CorrectAnswer) {
-      if (this.number < 12) { // Bei richtiger Antwort.
+      if (this.number < 12) {
         this.IfAnswerIsTrue(OutputQuestionState, CorrectAnswer)
         return
       }
-      if (this.number === 12)  // Bei richtiger Antwort und letzter Frage.
+      if (this.number === 12)
         this.LastQuestionIfAnswerIsTrue(OutputQuestionState, CorrectAnswer)
       return
-
     }
+
     if (SeletedAnswer !== CorrectAnswer) {
-      if (this.number < 12) { // Bei falscher Antwort.
+      if (this.number < 12) {
         this.IfAnswerIsFalse(CorrectAnswer)
         return
       }
-      if (this.number === 12) { // Bei falscher Antwort und letzter Frage.
+      if (this.number === 12) {
         this.LastQuestionIfAnswerIsFalse(CorrectAnswer)
       }
     }
@@ -93,8 +88,10 @@ export class LandeshauptstadtComponent implements OnInit {
   }
 
   LastQuestionIfAnswerIsFalse(CorrectAnswer: string) {
-    let output: string = "Falsch, die richtige Antwort wäre " + CorrectAnswer + "!";
-    document.getElementById('output')!.innerHTML = output;
+    let message: string = `Falsch, die richtige Antwort wäre ${CorrectAnswer}!`;
+    const output = document.getElementById('output')
+    output!.innerHTML = message
+    output!.style.color = "red"
 
     const resultBt = document.getElementById("result");
     resultBt!.style.visibility = 'visible';
@@ -104,15 +101,22 @@ export class LandeshauptstadtComponent implements OnInit {
   }
 
   IfAnswerIsFalse(CorrectAnswer: string) {
-    let output: string = "Falsch, die richtige Antwort wäre " + CorrectAnswer + "!";
-    document.getElementById('output')!.innerHTML = output;
+    let message: string = `Falsch, die richtige Antwort wäre ${CorrectAnswer}!`;
+    const output = document.getElementById('output')
+    output!.innerHTML = message
+    output!.style.color = "red"
+
     this.number++;
 
   }
 
   LastQuestionIfAnswerIsTrue(OutputState: string, CorrectAnswer: string) {
-    let output: string = "Korrekt!, die Landeshauptstadt von " + OutputState + " ist " + CorrectAnswer + ".";
-    document.getElementById('output')!.innerHTML = output;
+    let message: string = `Richtig!, die Landeshauptstadt von ${OutputState} ist ${CorrectAnswer}.`;
+
+    const output = document.getElementById('output')
+    output!.innerHTML = message
+    output!.style.color = "green"
+
     this.points++
 
     const resultBt = document.getElementById("result");
@@ -120,16 +124,19 @@ export class LandeshauptstadtComponent implements OnInit {
 
   }
   IfAnswerIsTrue(OutputState: string, CorrectAnswer: string) {
-    let output: string = "Korrekt!, die Landeshauptstadt von " + OutputState + " ist " + CorrectAnswer + ".";
-    document.getElementById('output')!.innerHTML = output;
+    let message: string = `Richtig!, die Landeshauptstadt von ${OutputState} ist ${CorrectAnswer}.`;
+    const output = document.getElementById('output')
+    output!.innerHTML = message
+    output!.style.color = "green"
+
     this.points++
     this.number++
   }
   shuffle() {
-    this.CapitalStates = this.av.Landeshauptstaedte.sort(() => Math.random() - 0.5);
+    this.CapitalStates = this.av.Capitals.sort(() => Math.random() - 0.5);
     console.log(this.CapitalStates)
-    this.Wappen = this.av.WappenAndState.sort(() => Math.random() - 0.5);
-    console.log(this.Wappen)
+    this.Flag = this.av.FlagAndState.sort(() => Math.random() - 0.5);
+    console.log(this.Flag)
 
   }
 }
